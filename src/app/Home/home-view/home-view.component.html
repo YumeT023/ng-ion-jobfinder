@@ -40,4 +40,8 @@
     </ion-content>
   </div>
 
+  <ion-footer>
+    <app-footer (set)="setPage($event)" [canSet]="[1, lastPage]" [page]="page"></app-footer>
+  </ion-footer>
+
 </ion-app>

@@ -1,0 +1,11 @@
+<ion-toolbar>
+  <ion-chip slot="secondary" (click)="set.emit('prev')" [disabled]="page <= canSet[0]">
+    <ion-icon name="arrow-back" color="warning"></ion-icon>
+    <ion-label>previous</ion-label>
+  </ion-chip>
+
+  <ion-chip slot="primary" (click)="set.emit('next')" [disabled]="page >= canSet[1]">
+    <ion-label>next</ion-label>
+    <ion-icon name="arrow-forward" color="warning"></ion-icon>
+  </ion-chip>
+</ion-toolbar>

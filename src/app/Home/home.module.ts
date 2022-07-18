@@ -8,6 +8,7 @@ import { JobComponent } from './job/job.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { JobViewComponent } from './job-view/job-view.component';
 import { BookmarkService } from '../services/bookmark.service';
+import { FooterComponent } from './footer/footer.component';
 
 const HomeRoutes: Routes = [
   {
@@ -23,7 +24,7 @@ const HomeRoutes: Routes = [
 ]
 
 @NgModule({
-  declarations: [HomeViewComponent, JobViewComponent, JobComponent, SidebarComponent],
+  declarations: [HomeViewComponent, JobViewComponent, JobComponent, SidebarComponent, FooterComponent],
   imports: [
     CommonModule,
     FormsModule,

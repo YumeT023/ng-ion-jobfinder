@@ -2,7 +2,7 @@
   "name": "ionic-webscrap",
   "integrations": {
     "capacitor": {
-      "enabled": false
+      "enabled": true
     },
     "cordova": {}
   },

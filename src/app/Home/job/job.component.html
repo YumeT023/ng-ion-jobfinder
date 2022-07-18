@@ -3,7 +3,7 @@
   <ion-item>
     <ion-avatar>
 
-      <ion-icon *ngIf="!job.logo_company" name="briefcase" size="big"></ion-icon>
+      <ion-icon *ngIf="!job.logo_company" name="briefcase" size="large"></ion-icon>
 
       <img *ngIf="job.logo_company" [src]="job.logo_company" alt="">
 
@@ -17,13 +17,6 @@
       <ion-label>urgent</ion-label>
     </ion-chip>
 
-    
-    <ion-note slot="end" class="fw-0" *ngIf="job.limit_date">
-      <small>
-        date limite: {{job.limit_date}}
-      </small>
-    </ion-note>
-
   </ion-item>
 
   <ion-card-content>
@@ -32,13 +25,14 @@
       <ion-label class="ion-text-wrap ion-padding-bottom" color="dark">
         {{job.description}}
       </ion-label>
+
     </ion-item>
 
 
     <div class="ion-padding-start">
 
       <ion-button color="warning">
-        <a [href]="job.href" class="rem_decoration">
+        <a [href]="job.href" target="_parent" class="rem_decoration">
           <ion-label color="light">more info</ion-label>
         </a>
       </ion-button>
@@ -52,6 +46,11 @@
 
     </div>
 
+    <ion-note slot="end" class="fw-0" *ngIf="job.limit_date">
+      <small>
+        date limite: {{job.limit_date}}
+      </small>
+    </ion-note>
   </ion-card-content>
 
 </ion-card>

@@ -12,7 +12,7 @@ import { BookmarkService } from 'src/app/services/bookmark.service';
 })
 export class JobViewComponent implements OnInit, OnDestroy, OnChanges {
   listItems: (JobI | Bookmark)[];
-  listSubscription: Subscription;
+  listSubscription = new Subscription();
 
   @Input() mode: filterMode;
   @Input() job: JobI[];
