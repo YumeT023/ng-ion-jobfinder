@@ -1,0 +1,7 @@
+<ion-list *ngIf="listItems">
+  
+  <div *ngFor="let item of listItems">
+    <app-job [jobInfo]="item"></app-job>
+  </div>
+
+</ion-list>

@@ -1,0 +1,11 @@
+{
+  "name": "ionic-webscrap",
+  "integrations": {
+    "capacitor": {
+      "enabled": false
+    },
+    "cordova": {}
+  },
+  "type": "angular",
+  "id": "e4bfda93"
+}

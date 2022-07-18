@@ -1,0 +1,43 @@
+<ion-app ngClass="ion-margin-none">
+
+  <app-sidebar></app-sidebar>
+
+  <div class="ion-page" id="main">
+    <ion-toolbar color="none">
+
+      <ion-segment color="warning" mode="md" [(ngModel)]="mode">
+        <ion-segment-button value='find'>
+          FIND
+        </ion-segment-button>
+        <ion-segment-button value="bookmark">
+          Saved
+        </ion-segment-button>
+      </ion-segment>
+
+      <ion-menu-toggle>
+        <ion-button color="none">
+          <ion-icon slot="icon-only" name="construct" color="medium"></ion-icon>
+        </ion-button>
+      </ion-menu-toggle>
+
+    </ion-toolbar>
+
+
+    <ion-content forceOverscroll="false">
+
+      <div class="spinner-container" *ngIf="!jobs && mode !== 'bookmark'">
+        <ion-spinner name="crescent" color="warning" duration="5s"></ion-spinner>
+      </div>
+
+
+      <app-job-view 
+        *ngIf="jobs || mode === 'bookmark'"
+        [mode]="mode" 
+        [job]="jobs"
+      >
+      </app-job-view>
+
+    </ion-content>
+  </div>
+
+</ion-app>

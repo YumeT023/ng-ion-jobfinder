@@ -1,0 +1,98 @@
+<ion-card *ngIf="job">
+
+  <ion-item>
+    <ion-avatar>
+
+      <ion-icon *ngIf="!job.logo_company" name="briefcase" size="big"></ion-icon>
+
+      <img *ngIf="job.logo_company" [src]="job.logo_company" alt="">
+
+    </ion-avatar>
+
+    <ion-label class="ion-padding-start ion-text-wrap">
+      {{job.title}}
+    </ion-label>
+
+    <ion-chip *ngIf="job.flag" color="danger">
+      <ion-label>urgent</ion-label>
+    </ion-chip>
+
+    
+    <ion-note slot="end" class="fw-0" *ngIf="job.limit_date">
+      <small>
+        date limite: {{job.limit_date}}
+      </small>
+    </ion-note>
+
+  </ion-item>
+
+  <ion-card-content>
+
+    <ion-item lines="none">
+      <ion-label class="ion-text-wrap ion-padding-bottom" color="dark">
+        {{job.description}}
+      </ion-label>
+    </ion-item>
+
+
+    <div class="ion-padding-start">
+
+      <ion-button color="warning">
+        <a [href]="job.href" class="rem_decoration">
+          <ion-label color="light">more info</ion-label>
+        </a>
+      </ion-button>
+
+      <ion-fab horizontal="end" *ngIf="job['id']">
+        <ion-fab-button size="small" color="light" (click)="remove(job['id'])">
+          <ion-icon name="trash" color="medium"></ion-icon>
+          <ion-ripple-effect></ion-ripple-effect>
+        </ion-fab-button>
+      </ion-fab>
+
+    </div>
+
+  </ion-card-content>
+
+</ion-card>
+
+
+<!-- skeleton view when job is not loaded yet -->
+<ion-card *ngIf="!job">
+
+  <ion-item>
+    <ion-avatar>
+      <ion-skeleton-text animated></ion-skeleton-text>
+    </ion-avatar>
+
+    <ion-label class="ion-padding-start">
+      <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+    </ion-label>
+
+    <ion-label>
+      <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+    </ion-label>
+
+
+  </ion-item>
+
+  <ion-card-content>
+
+    <ion-item lines="none">
+      <ion-label class="ion-text-wrap ion-padding-bottom" color="dark">
+        <ion-skeleton-text animated></ion-skeleton-text>
+        <ion-skeleton-text animated style="width: 85%"></ion-skeleton-text>
+        <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+      </ion-label>
+    </ion-item>
+
+    <div class="ion-padding-start">
+      <ion-label color="light">
+        <ion-skeleton-text animated style="width: 20%"></ion-skeleton-text>
+      </ion-label>
+    </div>
+
+  </ion-card-content>
+
+
+</ion-card>
